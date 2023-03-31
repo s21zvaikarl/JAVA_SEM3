@@ -41,12 +41,15 @@ public class GuestUser {
 		ArrayList<Page> result = new ArrayList<>();
 		if(inputWord != null) {
 			for(User temp: MainService.allRegisterdUsers) {
-				BussinessUser bUserTemp = (BussinessUser)temp;
-				for(Page tempPage : bUserTemp.getAllPages()) {
-					if(tempPage.getTitle().toLowerCase().contains(inputWord) || tempPage.getDescription().toLowerCase().contains(inputWord)) {
-						result.add(tempPage);
+				if(temp instanceof BussinessUser) {
+					BussinessUser bUserTemp = (BussinessUser)temp;
+					for(Page tempPage : bUserTemp.getAllPages()) {
+						if(tempPage.getTitle().toLowerCase().contains(inputWord) || tempPage.getDescription().toLowerCase().contains(inputWord)) {
+							result.add(tempPage);
+						}
 					}
 				}
+				
 			}
 		}
 		return result;

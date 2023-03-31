@@ -125,6 +125,15 @@ public class MainService {
 		for(Post temp: bu1.getAllPages().get(0).getPostsInPage()) {
 			System.out.println(temp);
 		}
+		
+		System.out.println("--------------------------");
+		System.out.println(pu1.findUserByNameOrSurnameOrUsername("nekarlis"));
+		
+		System.out.println("--------------------------");
+		System.out.println(pu2.findPublicPostInPrivateUserOrInPage("sodien"));
+		
+		System.out.println("--------------------------");
+		System.out.println(pu2.findPageByTitleOrDescription("astronomiju"));
 	}
 
 }
