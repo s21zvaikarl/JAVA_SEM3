@@ -65,19 +65,19 @@ public class GuestUser {
 						}
 					}
 				else if(temp instanceof BussinessUser) {
-					BussinessUser bUserTemp = (BussinessUser)temp;
-					for(Page tempPage : bUserTemp.getAllPages()) {
+					BussinessUser bUserTemp = (BussinessUser) temp;
+					for(Page tempPage: bUserTemp.getAllPages()) {
 						for(Post tempPost: tempPage.getPostsInPage()) {
-							if(tempPage.getTitle().toLowerCase().contains(inputWord) || tempPage.getDescription().toLowerCase().contains(inputWord)) {
-							result.add(tempPage);
+							if(tempPost.getMsg().toLowerCase().contains(inputWord.toLowerCase())) {
+								result.add(tempPost);
 							}
-						
 						}
 					}
 				}
 				
 			}
 		}
+		return result;
 	}
 	
 
